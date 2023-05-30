@@ -56,4 +56,5 @@ def recibir_solicitud():
 if __name__ == '__main__':
     threading.Thread(target=cerrar_servidor_flask).start()
 
-    app.run(host='0.0.0.0', port=puerto, debug=False)
+    # Ejecutar el servidor en segundo plano
+    threading.Thread(target=app.run, kwargs={'host': '0.0.0.0', 'port': puerto, 'debug': False}).start()
