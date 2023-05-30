@@ -24,7 +24,7 @@ class ManejadorPeticiones(BaseHTTPRequestHandler):
         self.wfile.write(b'Archivo subido correctamente.')
 
 def run_server():
-    direccion_servidor = ('192.168.0.39', 8080)
+    direccion_servidor = ('0.0.0.0', 8080)
     httpd = HTTPServer(direccion_servidor, ManejadorPeticiones)
     print(f"Servidor en {direccion_servidor[0]}:{direccion_servidor[1]}")
     httpd.serve_forever()

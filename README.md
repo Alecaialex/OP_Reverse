@@ -9,6 +9,7 @@ Los scripts disponibles son:
 * Webcam: Un script hecho en python que coge el video de la webcam del equipo y lo empieza a streamear en su ip y puerto indicado
 
 Ejemplo de setup:
+1. Establecer en server_recibir_main.py el puerto que queramos usar
 1. Establecer el puerto objetivo en webcam.py
 2. Establecer la ip del equipo víctima y el puerto elegido anteriormente en detener_webcam.py
 3. Establecer en kgr.py el tiempo de grabación de las teclas, el nombre/la ruta parar el archivo y el URL del servidor de nuestra máquina atacante
