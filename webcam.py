@@ -4,6 +4,9 @@ from flask import Flask, render_template, Response
 app = Flask(__name__)
 camera = cv2.VideoCapture(0)
 
+#Indicar el puerto para el servidor web
+puerto = 8000
+
 def video_stream():
     while True:
         ret, frame = camera.read()
@@ -12,10 +15,6 @@ def video_stream():
             print("No se pudo obtener el frame de la webcam.")
             break
 
-        # Manipula el frame si es necesario antes de enviarlo al cliente
-        # ...
-
-        # Convierte el frame a formato JPEG
         ret, buffer = cv2.imencode('.jpg', frame)
         frame_bytes = buffer.tobytes()
 
@@ -32,4 +31,4 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000, debug=True)
+    app.run(host='0.0.0.0', port=puerto, debug=True)
